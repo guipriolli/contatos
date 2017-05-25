@@ -1,0 +1,7 @@
+br\com\gui\contato\service\ContatoServiceImpl.class
+br\com\gui\contato\repository\ContatoRepository.class
+br\com\gui\contato\ContatoApplication.class
+br\com\gui\contato\model\Contato.class
+br\com\gui\contato\controller\ContatoController.class
+br\com\gui\contato\filter\CORSFilter.class
+br\com\gui\contato\service\ContatoService.class

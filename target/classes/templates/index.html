@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Contatos</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th><a href="/contatos?order=id">Id</a></th>
+                        <th><a href="/contatos?order=nome">Nome</a></th>
+                        <th><a href="/contatos?order=email">E-mail</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="contato: ${contatos}">
+                        <td th:text="${contato.id}"></td>
+                        <td th:text="${contato.nome}"></td>
+                        <td th:text="${contato.email}"></td>
+                        <td>
+                            <form th:action="@{/contato/deletar/{id}(id=${contato.id})}">
+                                <input type="submit" value="x" title="Deletar" />
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <form action="/filtro" method="POST">
+                <input type="text" name="filtro" placeholder="Filtro" />
+                <input type="submit" value="Filtrar" />
+            </form>
+            <form action="/contatos" method="GET">
+                <input type="submit" value="Remover Filtro" />
+            </form>
+        </div>
+    </body>
+</html>
